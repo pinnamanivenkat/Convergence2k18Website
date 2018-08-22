@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     $('.convergence-text').hide();
     var animData = {
         wrapper: document.getElementById('preloader-animation'),
@@ -12,20 +12,20 @@
     anim.setSpeed(1);
     bodymovin.setSubframeRendering(false);
 
-    $(window).on('load', function() {
-        setTimeout(function() {
+    $(window).on('load', function () {
+        setTimeout(function () {
             anim.stop();
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#preloader').fadeOut('fast');
             }, 1700);
             $('#preloader-animation').hide();
             $('.convergence-text').show();
-            $('.ml1 .letters').each(function() {
+            $('.ml1 .letters').each(function () {
                 $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
             });
             anime.timeline({
-                    loop: false
-                })
+                loop: false
+            })
                 .add({
                     targets: '.ml1 .letter',
                     scale: [0.3, 1],
@@ -33,7 +33,7 @@
                     translateZ: 0,
                     easing: "easeOutExpo",
                     duration: 600,
-                    delay: function(el, i) {
+                    delay: function (el, i) {
                         return 70 * (i + 1)
                     }
                 }).add({
@@ -43,7 +43,7 @@
                     easing: "easeOutExpo",
                     duration: 700,
                     offset: '-=875',
-                    delay: function(el, i, l) {
+                    delay: function (el, i, l) {
                         return 80 * (l - i);
                     }
                 });
@@ -65,14 +65,13 @@
             "shape": {
                 "type": "circle",
                 "stroke": {
-                    "width": 0,
+                    "width": 2,
                     "color": "#000000"
                 },
                 "polygon": {
-                    "nb_sides": 5
+                    "nb_sides": 10
                 },
                 "image": {
-                    "src": "img/github.svg",
                     "width": 100,
                     "height": 100
                 }
@@ -81,7 +80,7 @@
                 "value": 1,
                 "random": false,
                 "anim": {
-                    "enable": false,
+                    "enable": true,
                     "speed": 1,
                     "opacity_min": 0.1,
                     "sync": false
@@ -92,7 +91,7 @@
                 "random": true,
                 "anim": {
                     "enable": false,
-                    "speed": 40,
+                    "speed": 10,
                     "size_min": 0.1,
                     "sync": false
                 }
@@ -134,7 +133,7 @@
             },
             "modes": {
                 "grab": {
-                    "distance": 150,
+                    "distance": 140,
                     "line_linked": {
                         "opacity": 0
                     }
@@ -147,18 +146,17 @@
                     "speed": 3
                 },
                 "repulse": {
-                    "distance": 200,
+                    "distance": 100,
                     "duration": 0.4
                 },
                 "push": {
-                    "particles_nb": 8
+                    "particles_nb": 5
                 },
                 "remove": {
-                    "particles_nb": 2
+                    "particles_nb": 4
                 }
             }
         },
-        "retina_detect": true
+        // "retina_detect": true
     });
-
 })(jQuery);
