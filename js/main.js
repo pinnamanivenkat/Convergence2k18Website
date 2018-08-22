@@ -1,5 +1,11 @@
 (function ($) {
     $('.convergence-text').hide();
+
+    $('.menu-icon').click(function() {
+        $(this).toggleClass('menu-open');
+        $('.nav').toggleClass('show');
+    });
+
     var animData = {
         wrapper: document.getElementById('preloader-animation'),
         animType: 'svg',
@@ -15,11 +21,16 @@
     $(window).on('load', function () {
         setTimeout(function () {
             anim.stop();
+
             setTimeout(function () {
-                $('#preloader').fadeOut('fast');
+                $('#preloader').fadeOut('fast',function() {
+                    $('#preloader').remove();
+                });
             }, 1700);
+
             $('#preloader-animation').hide();
             $('.convergence-text').show();
+
             $('.ml1 .letters').each(function () {
                 $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
             });

@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -7,7 +8,7 @@ body, html {
 
 #particles-js {
     width: 100%;
-    overflow: hidden!important;
+    overflow: hidden !important;
     height: 100%;
     background-color: #000000;
 }
@@ -15,22 +16,22 @@ body, html {
 #preloader {
     width: 100% !important;
     height: 100% !important;
-    top: 0!important;
-    left: 0!important;
+    top: 0 !important;
+    left: 0 !important;
     overflow: hidden !important;
-    background: white!important;
+    background: white !important;
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 15;
 }
-
 
 svg {
     top: 0;
     left: 0;
-    width: 100%!important;
-    height: 100%!important;
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .ml1 {
@@ -67,4 +68,113 @@ svg {
 
 .ml1 .line2 {
     bottom: 0;
+}
+
+/* ############
+   ### Menu ###
+   ############ */
+
+.nav {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    visibility: hidden;
+    background: #ffffff;
+    transform: scale(0);
+    transform-origin: right top;
+    transition: .5s ease-out;
+    border-radius: 100%;
+}
+
+.show {
+    visibility: visible;
+    transform: scale(1);
+    transition: .5s ease-out;
+    border-radius: 0%;
+}
+
+.menu-icon {
+    width: 60px;
+    height: 45px;
+    top: 15px;
+    right: 15px;
+    position: fixed;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-icon span {
+    display: block;
+    position: absolute;
+    height: 9px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.menu-icon span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.menu-icon span:nth-child(2) {
+    top: 18px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.menu-icon span:nth-child(3) {
+    top: 36px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+.menu-open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -3px;
+    background: black;
+}
+
+.menu-open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+
+.menu-open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 39px;
+    background: black;
 }
