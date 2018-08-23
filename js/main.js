@@ -1,10 +1,16 @@
 (function ($) {
     $('.convergence-text').hide();
 
+    $("body").css('overflow','hidden');
+
     $(".menu-link").click(function (e) {
         e.preventDefault();
         $(".menu").toggleClass("open");
         $(".menu-overlay").toggleClass("open");
+    });
+
+    $(window).scroll(function() {
+        console.log('t')
     });
 
     $('a').not('[href="#"]').not('[href="#0"]').click(function (event) {
@@ -57,8 +63,9 @@
             anim.stop();
 
             setTimeout(function () {
-                $('#preloader').fadeOut('fast', function () {
+                $('#preloader').fadeOut('slow', function () {
                     $('#preloader').remove();
+                    $("body").css('overflow','auto');
                 });
             }, 1700);
 
