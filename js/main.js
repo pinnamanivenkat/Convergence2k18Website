@@ -1,10 +1,12 @@
 (function ($) {
     $('.convergence-text').hide();
 
-    $('.menu-icon').click(function() {
-        $(this).toggleClass('menu-open');
-        $('.nav').toggleClass('show');
+    $(".menu-link").click(function (e) {
+        e.preventDefault();
+        $(".menu").toggleClass("open");
+        $(".menu-overlay").toggleClass("open");
     });
+
 
     var animData = {
         wrapper: document.getElementById('preloader-animation'),
@@ -23,7 +25,7 @@
             anim.stop();
 
             setTimeout(function () {
-                $('#preloader').fadeOut('fast',function() {
+                $('#preloader').fadeOut('fast', function () {
                     $('#preloader').remove();
                 });
             }, 1700);
