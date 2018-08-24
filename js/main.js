@@ -1,7 +1,24 @@
 (function ($) {
     $('.convergence-text').hide();
 
-    $("body").css('overflow','hidden');
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    imageHeight = windowHeight > windowWidth ? windowWidth : windowHeight;
+    imageHeight -= 50;
+    $('#demoimage').width(imageHeight)
+    $('#demoimage').height(imageHeight)
+
+    $('#demoimage').hide();
+
+    $("body").css('overflow', 'hidden');
+
+    $('div').each(function () {
+        var imageUrl = $(this).attr('data-src');
+        if (typeof imageUrl != typeof undefined) {
+            var image = new Image();
+            image.src = imageUrl;
+        }
+    });
 
     $(".menu-link").click(function (e) {
         e.preventDefault();
@@ -9,9 +26,38 @@
         $(".menu-overlay").toggleClass("open");
     });
 
-    $(window).scroll(function() {
-        console.log('t')
-    });
+    $(".team-image").hover(function () {
+        personImage = $(this).attr('data-src');
+        if (typeof personImage != typeof undefined) {
+            $('#demoimage').show('200');
+            console.log('hovered');
+            $('#demoimage').attr('src', personImage);
+            var images = $('.team-image')
+            for (i = 0; i < images.length; i++) {
+                $(images[i]).hide();
+            }
+            $(this).show();
+            $(this).css({
+                transform: 'scale(1.2)',
+                transition: '.4s ease-in-out'
+            })
+        }
+    }, function () {
+        personImage = $(this).attr('data-src');
+        if (typeof personImage != typeof undefined) {
+            $(this).css({
+                transform: 'scale(1)',
+                transition: '.4s ease-in-out'
+            })
+            var images = $('.team-image')
+            for (i = 0; i < images.length; i++) {
+                $(images[i]).show();
+            }
+            $('#demoimage').hide('200',function() {
+                $('#demoimage').removeAttr('src');
+            });
+        }
+    })
 
     $('a').not('[href="#"]').not('[href="#0"]').click(function (event) {
         // On-page links
@@ -65,7 +111,7 @@
             setTimeout(function () {
                 $('#preloader').fadeOut('slow', function () {
                     $('#preloader').remove();
-                    $("body").css('overflow','auto');
+                    $("body").css('overflow', 'auto');
                 });
             }, 1700);
 
