@@ -122,12 +122,12 @@
             $('#preloader-animation').hide();
             $('.convergence-text').show();
 
+            // Wrap every letter in a span
             $('.ml1 .letters').each(function () {
                 $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
             });
-            anime.timeline({
-                loop: false
-            })
+
+            anime.timeline({ loop: false })
                 .add({
                     targets: '.ml1 .letter',
                     scale: [0.3, 1],

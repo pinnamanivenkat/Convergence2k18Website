@@ -41,12 +41,10 @@ svg {
 
 .ml1 {
     font-weight: 900;
-    font-size: 5em;
+    font-size: 2.5em;
 }
 
-.ml1 .letters {
-    display: inline-block;
-    line-height: 1em;
+.letters {
     color: #26292D;
 }
 
@@ -290,6 +288,11 @@ section {
     margin-bottom: 20px;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    color: white!important;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: white !important;
 }
