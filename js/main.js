@@ -1,6 +1,6 @@
 (function ($) {
     $('.convergence-text').hide();
-
+    $('#team-member-image').css('z-index',14);
     var windowHeight = $(window).height();
     var windowWidth = $(window).width();
     imageHeight = windowHeight > windowWidth ? windowWidth : windowHeight;
@@ -27,6 +27,7 @@
     });
 
     $(".team-image").mouseenter(function () {
+        $('#team-member-image').css('z-index',16);
         personImage = $(this).attr('convergence-src');
         if (typeof personImage != typeof undefined) {
             $('#demoimage').attr('src', personImage);
@@ -60,6 +61,7 @@
                 }
             }
             $('#demoimage').hide('200')
+            $('#team-member-image').css('z-index',14);
         }
     })
 
@@ -149,7 +151,7 @@
                         return 80 * (l - i);
                     }
                 });
-        }, 6000);
+        }, 4000);
     });
 
     particlesJS("particles-js", {
