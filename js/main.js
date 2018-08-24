@@ -13,7 +13,7 @@
     $("body").css('overflow', 'hidden');
 
     $('div').each(function () {
-        var imageUrl = $(this).attr('data-src');
+        var imageUrl = $(this).attr('convergence-src');
         if (typeof imageUrl != typeof undefined) {
             var image = new Image();
             image.src = imageUrl;
@@ -26,36 +26,40 @@
         $(".menu-overlay").toggleClass("open");
     });
 
-    $(".team-image").hover(function () {
-        personImage = $(this).attr('data-src');
+    $(".team-image").mouseenter(function () {
+        personImage = $(this).attr('convergence-src');
         if (typeof personImage != typeof undefined) {
-            $('#demoimage').show('200');
-            console.log('hovered');
             $('#demoimage').attr('src', personImage);
+            $('#demoimage').show('200')
             var images = $('.team-image')
             for (i = 0; i < images.length; i++) {
-                $(images[i]).hide();
+                if ($(images[i]).attr('convergence-src') != personImage) {
+                    $(images[i]).css({ "opacity": "0" });
+                } else {
+                    $(images[i]).css({
+                        transform: 'scale(1.2)',
+                        transition: '.4s ease-in-out'
+                    })
+                }
             }
-            $(this).show();
-            $(this).css({
-                transform: 'scale(1.2)',
-                transition: '.4s ease-in-out'
-            })
         }
-    }, function () {
-        personImage = $(this).attr('data-src');
+    });
+
+    $(".team-image").mouseleave(function () {
+        personImage = $(this).attr('convergence-src');
         if (typeof personImage != typeof undefined) {
-            $(this).css({
-                transform: 'scale(1)',
-                transition: '.4s ease-in-out'
-            })
             var images = $('.team-image')
             for (i = 0; i < images.length; i++) {
-                $(images[i]).show();
+                if ($(images[i]).attr('convergence-src') != personImage) {
+                    $(images[i]).css({ opacity: 1 });
+                } else {
+                    $(images[i]).css({
+                        transform: 'scale(1)',
+                        transition: '.4s ease-in-out'
+                    })
+                }
             }
-            $('#demoimage').hide('200',function() {
-                $('#demoimage').removeAttr('src');
-            });
+            $('#demoimage').hide('200')
         }
     })
 
