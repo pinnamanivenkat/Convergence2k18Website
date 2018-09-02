@@ -1,3 +1,4 @@
+
 (function ($) {
     $('.convergence-text').hide();
     $('#team-member-image').css('z-index',14);
