@@ -273,7 +273,7 @@ section {
 
 #demoimage {
     border-radius: 25%;
-    object-fit: cover;
+    object-fit: fill;
     filter: grayscale(100%) opacity(0.7);
 }
 
