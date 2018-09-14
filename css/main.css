@@ -72,6 +72,12 @@ html {
 	width: 19%;
 	max-width: 92px;
 	font: bold 250% 'Droid Sans', Arial, sans-serif;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
 	text-align: center;
 	color: #111;
 	background-color: #ddd;
@@ -115,6 +121,7 @@ html {
 	color: #ccc;
 	text-shadow: 1px 1px 0px #000;
 	text-align: center;
+    user-select: none;
 	text-transform: uppercase;
 	display: inline-block;
 }
