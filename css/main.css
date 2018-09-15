@@ -428,21 +428,59 @@ h6 {
 }
 
 .college-icon-holder {
-    height: 100px;
+    width: 100%;
+    height: 250px;
     z-index: 16!important;
     position: relative;
 }
 
 .college-icon-holder img {
     height: 100%;
-    object-fit: contain!important;
+    width: 100%;
 }
 
 .college-icon-holder div:nth-child(1) {
     float: right;
 }
 
-.convergence-font-holder {
+.college-icon-holder div:nth-child(1) img {
+    object-fit: contain!important;
+    float: right;
+}
+
+.college-icon-holder div:nth-child(2) img {
+    object-fit: cover!important;
+    float: right;
+}
+
+.college-icon-holder div:nth-child(3) img {
+    object-fit: contain!important;
+    float: left;
+}
+
+.download-holder {
+    height: 50px;
+    position: relative;
+    z-index: 16;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.download-holder img {
+    height: 100%;
+    display: inline-block;
+    object-fit: contain;
+}
+
+/* .convergence-font {
+    width: 100%!important;
+    height: 100%!important;
+    object-fit: scale-down!important;
+} */
+
+
+/* .convergence-font-holder {
     position: relative;
     z-index: 16;
     height: 250px;
@@ -452,4 +490,4 @@ h6 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
