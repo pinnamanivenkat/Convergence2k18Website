@@ -499,3 +499,12 @@ h6 {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap
 }
+
+#home {
+    height: 100vh!important;
+}
+
+#aboutus {
+    padding-left: 40px!important;
+    padding-right: 40px!important;
+}
