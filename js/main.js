@@ -1,7 +1,7 @@
-
 (function ($) {
+    $('.snapchat-code').hide();
     $('.convergence-text').hide();
-    $('#team-member-image').css('z-index',14);
+    $('#team-member-image').css('z-index', 14);
     var windowHeight = $(window).height();
     var windowWidth = $(window).width();
     imageHeight = windowHeight > windowWidth ? windowWidth : windowHeight;
@@ -21,6 +21,22 @@
         }
     });
 
+    $('.fa-snapchat-ghost').click(() => {
+        $('.snapchat-code').show("scale", {
+            percent: 100,
+            direction: 'vertical',
+            origin: ['middle','center']
+        }, 400)
+    })
+
+    $('.snapchat-code').click(() => {
+        $('.snapchat-code').hide("scale", {
+            percent: 0,
+            direction: 'both',
+            origin: ['middle','center']
+        }, 400);
+    });
+
     $(".menu-link").click(function (e) {
         e.preventDefault();
         $(".menu").toggleClass("open");
@@ -28,7 +44,7 @@
     });
 
     $(".team-image").mouseenter(function () {
-        $('#team-member-image').css('z-index',16);
+        $('#team-member-image').css('z-index', 16);
         personImage = $(this).attr('convergence-src');
         if (typeof personImage != typeof undefined) {
             $('#demoimage').attr('src', personImage);
@@ -36,7 +52,9 @@
             var images = $('.team-image')
             for (i = 0; i < images.length; i++) {
                 if ($(images[i]).attr('convergence-src') != personImage) {
-                    $(images[i]).css({ "opacity": "0" });
+                    $(images[i]).css({
+                        "opacity": "0"
+                    });
                 } else {
                     $(images[i]).css({
                         transform: 'scale(1.2)',
@@ -53,7 +71,9 @@
             var images = $('.team-image')
             for (i = 0; i < images.length; i++) {
                 if ($(images[i]).attr('convergence-src') != personImage) {
-                    $(images[i]).css({ opacity: 1 });
+                    $(images[i]).css({
+                        opacity: 1
+                    });
                 } else {
                     $(images[i]).css({
                         transform: 'scale(1)',
@@ -62,37 +82,31 @@
                 }
             }
             $('#demoimage').hide('200')
-            $('#team-member-image').css('z-index',14);
+            $('#team-member-image').css('z-index', 14);
         }
     })
 
     $('a').not('[href="#"]').not('[href="#0"]').click(function (event) {
-        // On-page links
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
             location.hostname == this.hostname
         ) {
-            // Figure out element to scroll to
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            // Does a scroll target exist?
             if (target.length) {
-                // Only prevent default if animation is actually gonna happen
                 event.preventDefault();
                 $('.menu').toggleClass('open');
                 $('.menu-overlay').toggleClass('open');
                 $('html, body').animate({
                     scrollTop: target.offset().top
                 }, 1000, "swing", function () {
-                    // Callback after animation
-                    // Must change focus!
                     var $target = $(target);
                     $target.focus();
-                    if ($target.is(":focus")) { // Checking if the target was focused
+                    if ($target.is(":focus")) {
                         return false;
                     } else {
-                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                        $target.focus(); // Set focus again
+                        $target.attr('tabindex', '-1');
+                        $target.focus();
                     };
                 });
             }
@@ -130,7 +144,9 @@
                 $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
             });
 
-            anime.timeline({ loop: false })
+            anime.timeline({
+                    loop: false
+                })
                 .add({
                     targets: '.ml1 .letter',
                     scale: [0.3, 1],
