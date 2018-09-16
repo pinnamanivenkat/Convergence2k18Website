@@ -24,8 +24,8 @@
     $('.fa-snapchat-ghost').click(() => {
         $('.snapchat-code').show("scale", {
             percent: 100,
-            direction: 'vertical',
-            origin: ['middle','center']
+            direction: 'both',
+            origin: ['center','middle']
         }, 400)
     })
 
