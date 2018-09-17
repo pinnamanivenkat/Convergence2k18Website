@@ -30,8 +30,8 @@
     <script>
 $(document).ready(function(){
      $("a[href$='#aboutus']").click(function(){
-        $("#hell").fadeOut(1000);
-          $("#hell").fadeIn(1000);
+        $("#hell,#ima").fadeOut(1000);
+          $("#hell,#ima").fadeIn(1000);
     });
 });
 </script>
@@ -125,7 +125,7 @@ $(document).ready(function(){
         </div>
         <div class="about-vnrvjiet row">
             <div class="col-md-4 text-v-center">
-                <img src="images/vnrvjiet.png">
+                <img id="ima" src="images/vnrvjiet.png">
             </div>
             <div class="col-md-8 v-center text-center">
                 <h4 id="hell">Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering and Technology (VNRVJIET) is an
