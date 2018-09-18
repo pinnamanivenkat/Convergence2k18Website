@@ -64,9 +64,15 @@ html {
     color: white !important;
 }
 
+#events li {
+    transform: scale(1);
+    transition: .4s ease-in-out;
+}
+
 #events li:hover {
     color: white !important;
     transform: scale(1.2);
+    transition: .4s ease-in-out;
 }
 
 .card-container img {

@@ -21,11 +21,25 @@
         }
     });
 
+    $('.event-theme').on('click', function () {
+        $('.event-theme').each(function () {
+            $(this).removeClass("active");
+        })
+        $(this).addClass("active");
+        var themeTitle = $(this).text();
+        themeTitle = '#' + themeTitle;
+        $('.event-cards').each(function () {
+            $(this).removeClass("active-cards");
+        })
+        console.log(themeTitle);
+        $(themeTitle).addClass("active-cards");
+    });
+
     $('.fa-snapchat-ghost').click(() => {
         $('.snapchat-code').show("scale", {
             percent: 100,
             direction: 'both',
-            origin: ['center','middle']
+            origin: ['center', 'middle']
         }, 400)
     })
 
@@ -33,7 +47,7 @@
         $('.snapchat-code').hide("scale", {
             percent: 0,
             direction: 'both',
-            origin: ['middle','center']
+            origin: ['middle', 'center']
         }, 400);
     });
 
