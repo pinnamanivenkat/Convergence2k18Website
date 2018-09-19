@@ -526,6 +526,12 @@ section {
     margin-bottom: 20px;
 }
 
+.team-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
 h1,
 h2,
 h3,
@@ -698,4 +704,9 @@ h6 {
 .snapchat-code img {
     width: 50vh;
     height: 50vh;
+}
+
+.team-image img {
+    width: 100%;
+    object-fit: cover;
 }
