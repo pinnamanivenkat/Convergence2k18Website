@@ -1,10 +1,10 @@
-(function($) {
+(function ($) {
     $('.snapchat-code').hide();
     $('.convergence-text').hide();
 
     $("body").css('overflow', 'hidden');
 
-    $('div').each(function() {
+    $('div').each(function () {
         var imageUrl = $(this).attr('convergence-src');
         if (typeof imageUrl != typeof undefined) {
             var image = new Image();
@@ -12,14 +12,14 @@
         }
     });
 
-    $('.event-theme').on('click', function() {
-        $('.event-theme').each(function() {
+    $('.event-theme').on('click', function () {
+        $('.event-theme').each(function () {
             $(this).removeClass("active");
         })
         $(this).addClass("active");
         var themeTitle = $(this).text();
         themeTitle = '#' + themeTitle;
-        $('.event-cards').each(function() {
+        $('.event-cards').each(function () {
             $(this).removeClass("active-cards");
         })
         console.log(themeTitle);
@@ -42,23 +42,18 @@
         }, 400);
     });
 
-    $(".menu-link").click(function(e) {
+    $(".menu-link").click(function (e) {
         e.preventDefault();
         $(".menu").toggleClass("open");
         $(".menu-overlay").toggleClass("open");
     });
 
     resizeTeamImages();
-    $(window).resize(function() {
+    $(window).resize(function () {
         resizeTeamImages();
     });
 
-    $('.team-image').hover(function() {
-        console.log($(this));
-    }, function() {
-    });
-
-    $('a').not('[href="#"]').not('[href="#0"]').click(function(event) {
+    $('a').not('[href="#"]').not('[href="#0"]').click(function (event) {
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
             location.hostname == this.hostname
@@ -71,7 +66,7 @@
                 $('.menu-overlay').toggleClass('open');
                 $('html, body').animate({
                     scrollTop: target.offset().top
-                }, 1000, "swing", function() {
+                }, 1000, "swing", function () {
                     var $target = $(target);
                     $target.focus();
                     if ($target.is(":focus")) {
@@ -97,12 +92,12 @@
     anim.setSpeed(1);
     bodymovin.setSubframeRendering(false);
 
-    $(window).on('load', function() {
-        setTimeout(function() {
+    $(window).on('load', function () {
+        setTimeout(function () {
             anim.stop();
 
-            setTimeout(function() {
-                $('#preloader').fadeOut('slow', function() {
+            setTimeout(function () {
+                $('#preloader').fadeOut('slow', function () {
                     $('#preloader').remove();
                     $("body").css('overflow', 'auto');
                 });
@@ -112,7 +107,7 @@
             $('.convergence-text').show();
 
             // Wrap every letter in a span
-            $('.ml1 .letters').each(function() {
+            $('.ml1 .letters').each(function () {
                 $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
             });
 
@@ -126,7 +121,7 @@
                     translateZ: 0,
                     easing: "easeOutExpo",
                     duration: 600,
-                    delay: function(el, i) {
+                    delay: function (el, i) {
                         return 70 * (i + 1)
                     }
                 }).add({
@@ -136,7 +131,7 @@
                     easing: "easeOutExpo",
                     duration: 700,
                     offset: '-=875',
-                    delay: function(el, i, l) {
+                    delay: function (el, i, l) {
                         return 80 * (l - i);
                     }
                 });
@@ -254,9 +249,9 @@
     });
 
     function resizeTeamImages() {
-        $('.team-image img').each(function(index, el) {
-            console.log($(el).css('width'));
-            $(el).css('height', $(el).css('width'));
-        });
+        $('.team-container').each(function (idx, element) {
+            $(element).css('height', $(element).css('width'));
+        })
     }
+
 })(jQuery);
