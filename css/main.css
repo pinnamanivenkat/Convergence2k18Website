@@ -607,6 +607,11 @@ h6 {
     padding-right: 40px !important;
 }
 
+#aboutus h4 {
+    width: 100%;
+    word-wrap: break-word!important;
+}
+
 .contact-content {
     z-index: 16;
     position: relative;
