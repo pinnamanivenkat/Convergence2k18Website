@@ -20,11 +20,18 @@ html {
     list-style-type: none;
     color: white;
     display: flex;
+    flex-wrap: wrap;
 }
-
+/*
+#themes-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+*/
 #themes-list li {
-    margin: 0 auto;
-    font-size: 20px;
+    float: left;
+    margin: 0 15px;
+    font-size: 25px;
 }
 
 .event-cards {
@@ -657,10 +664,12 @@ h6 {
 }
 
 .fa-instagram {
-    background: #125688;
-    color: white;
-    border: 1px #125688 solid;
-    transition: all .4s ease-in-out;
+     background: #125688; 
+background: radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949
+45%,#d6249f 60%,#285AEB 90%);
+color: white;
+border: 1px #125688 solid;
+transition: all .4s ease-in-out;
 }
 
 .fa-instagram:hover {
