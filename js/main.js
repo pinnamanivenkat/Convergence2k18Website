@@ -11,18 +11,17 @@
             image.src = imageUrl;
         }
     });
-
     $('.event-theme').on('click', function () {
         $('.event-theme').each(function () {
             $(this).removeClass("active");
         })
         $(this).addClass("active");
-        var themeTitle = $(this).text();
+        var themeTitle = $(this).text().replace(/\s+/, "");
         themeTitle = '#' + themeTitle;
         $('.event-cards').each(function () {
             $(this).removeClass("active-cards");
         })
-        console.log(themeTitle);
+        //console.log(themeTitle);
         $(themeTitle).addClass("active-cards");
     });
 
