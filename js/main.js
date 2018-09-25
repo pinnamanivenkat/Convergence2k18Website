@@ -11,7 +11,6 @@
             image.src = imageUrl;
         }
     });
-
     $('.event-theme').on('click', function () {
         $('.event-theme').each(function () {
             $(this).removeClass("active");
