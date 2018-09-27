@@ -32,15 +32,6 @@ html {
     font-size: 25px;
 }
 
-.event-cards {
-    display: none;
-    margin: 10px 30px;
-}
-
-.active-cards {
-    display: flex;
-}
-
 .card-container {
     perspective: 600px;
     position: relative;
@@ -519,7 +510,6 @@ section {
     position: absolute;
     z-index: 15;
     overflow: hidden; 
-/*    z-index: 1000;*/
 }
 #demoimage {
     border-radius: 25%;
@@ -713,4 +703,84 @@ transition: all .4s ease-in-out;
 .snapchat-code img {
     width: 50vh;
     height: 50vh;
+}
+
+.event-cards {
+    display: none;
+}
+
+.active-cards {
+    display: block;
+}
+
+.team-container {
+    perspective: 1200px;
+    margin-bottom: 20px;
+    z-index: 16;
+}
+
+.team-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: all 1.0s linear;
+}
+
+.team-container:hover .team-card {
+    transform: rotateX(180deg);
+}
+
+.event-cards .team-container:hover .team-card {
+    transform: rotateY(180deg);
+}
+
+.event-cards img {
+    border-radius: 50%!important;
+}
+
+.team-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px !important;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px !important;
+}
+
+.face.back {
+    transform: rotateX(180deg);
+    background-color: white;
+    padding: 10px;
+}
+
+.event-cards .face.back {
+    transform: rotateY(180deg);
+}
+
+.face {
+    word-wrap: break-word;
+}
+
+.back * {
+    text-align: center;
+    width: 100%;
+    color: black !important;
+}
+
+.back h3 {
+    font-weight: bold !important;
+}
+
+.object-contain {
+    object-fit: cover;
+}
+
+.event-cards .front {
+    background: white;
 }
