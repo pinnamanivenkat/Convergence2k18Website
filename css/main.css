@@ -482,7 +482,7 @@ svg {
 section {
     padding-top: 100px;
     padding-bottom: 100px;
-    background: black !important;
+    background: black!important;
 }
 
 .section-heading {
@@ -506,6 +506,11 @@ section {
     height: 100%;
     position: fixed;
     z-index: 16;
+}
+#team {
+    position: relative;
+    z-index: 16;
+    overflow: hidden; 
 }
 #demoimage {
     border-radius: 25%;
@@ -693,6 +698,7 @@ transition: all .4s ease-in-out;
     left: 0;
     width: 100vw;
     height: 100vh;
+    display: none;
     position: fixed;
 }
 
