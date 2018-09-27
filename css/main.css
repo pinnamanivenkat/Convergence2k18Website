@@ -510,7 +510,7 @@ section {
 #team {
     position: relative;
     z-index: 16;
-    overflow: hidden; 
+    overflow: hidden;
 }
 #demoimage {
     border-radius: 25%;
