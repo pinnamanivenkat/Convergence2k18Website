@@ -1,13 +1,9 @@
 (function ($) {
     $('.snapchat-code').hide();
 
-    $('div').each(function () {
-        var imageUrl = $(this).attr('convergence-src');
-        if (typeof imageUrl != typeof undefined) {
-            var image = new Image();
-            image.src = imageUrl;
-        }
-    });
+    var imageLazyLoad = new LazyLoad({
+        elements_selector: ".lazy"
+    })
 
     $('.event-theme').on('click', function () {
         $('.event-theme').each(function () {
