@@ -1,8 +1,5 @@
 (function ($) {
     $('.snapchat-code').hide();
-    $('.convergence-text').hide();
-
-    $("body").css('overflow', 'hidden');
 
     $('div').each(function () {
         var imageUrl = $(this).attr('convergence-src');
@@ -11,6 +8,7 @@
             image.src = imageUrl;
         }
     });
+
     $('.event-theme').on('click', function () {
         $('.event-theme').each(function () {
             $(this).removeClass("active");
@@ -24,29 +22,28 @@
         //console.log(themeTitle);
         $(themeTitle).addClass("active-cards");
     });
-    $('.menu-team').on('click',function() {
-        $('#team').css('z-index','16');
-        $('#team').css('overflow','visible');
-        $('.menu-item:first-child').attr('href','#');
-        $('.menu-item:first-child').removeClass("active");
-        $(this).addClass("active");
-        $(".menu").removeClass("open");
-        $(".menu-overlay").removeClass("open");
-    })
-    $('.menu-item').on('click',function() {
-        $('#team').css('z-index','15');
-        $('#team').css('overflow','hidden');
-        $('.menu-item').each(function() {
+    // $('.menu-team').on('click', function () {
+    //     $('#team').css('z-index', '16');
+    //     $('#team').css('overflow', 'visible');
+    //     $('.menu-item:first-child').attr('href', '#');
+    //     $('.menu-item:first-child').removeClass("active");
+    //     $(this).addClass("active");
+    //     $(".menu").removeClass("open");
+    //     $(".menu-overlay").removeClass("open");
+    // })
+    $('.menu-item').on('click', function () {
+        $('#team').css('z-index', '15');
+        $('#team').css('overflow', 'hidden');
+        $('.menu-item').each(function () {
             var spaceless = '#' + $(this).text().replace(/\s/g, '');
             spaceless = spaceless.toLowerCase();
-            $(this).attr('href',spaceless)
+            $(this).attr('href', spaceless)
         });
         $('[data-spy="scroll"]').each(function () {
-  var $spy = $(this).scrollspy('refresh')
-});
+            var $spy = $(this).scrollspy('refresh')
+        });
         $('.menu-team').removeClass("active");
         $(this).addClass("active");
-        
     })
     $('.fa-snapchat-ghost').click(() => {
         $('.snapchat-code').show("scale", {
@@ -54,7 +51,7 @@
             direction: 'both',
             origin: ['center', 'middle']
         }, 400)
-    })
+    });
 
     $('.snapchat-code').click(() => {
         $('.snapchat-code').hide("scale", {
@@ -100,64 +97,6 @@
                 });
             }
         }
-    });
-
-    var animData = {
-        wrapper: document.getElementById('preloader-animation'),
-        animType: 'svg',
-        loop: true,
-        prerender: true,
-        autoplay: true,
-        path: 'animation.json'
-    };
-    var anim = bodymovin.loadAnimation(animData);
-    anim.setSpeed(1);
-    bodymovin.setSubframeRendering(false);
-
-    $(window).on('load', function () {
-        setTimeout(function () {
-            anim.stop();
-
-            setTimeout(function () {
-                $('#preloader').fadeOut('slow', function () {
-                    $('#preloader').remove();
-                    $("body").css('overflow', 'auto');
-                });
-            }, 1700);
-
-            $('#preloader-animation').hide();
-            $('.convergence-text').show();
-
-            // Wrap every letter in a span
-            $('.ml1 .letters').each(function () {
-                $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-            });
-
-            anime.timeline({
-                    loop: false
-                })
-                .add({
-                    targets: '.ml1 .letter',
-                    scale: [0.3, 1],
-                    opacity: [0, 1],
-                    translateZ: 0,
-                    easing: "easeOutExpo",
-                    duration: 600,
-                    delay: function (el, i) {
-                        return 70 * (i + 1)
-                    }
-                }).add({
-                    targets: '.ml1 .line',
-                    scaleX: [0, 1],
-                    opacity: [0.5, 1],
-                    easing: "easeOutExpo",
-                    duration: 700,
-                    offset: '-=875',
-                    delay: function (el, i, l) {
-                        return 80 * (l - i);
-                    }
-                });
-        }, 4000);
     });
 
     particlesJS("particles-js", {
@@ -271,9 +210,8 @@
     });
 
     function resizeTeamImages() {
-        $('.team-container').each(function (idx, element) {
-            $(element).css('height', $(element).css('width'));
-        })
+        var cw = $('.team-container').width();
+        $('.team-container').css({ 'height': cw + 'px' });
     }
 
 })(jQuery);
