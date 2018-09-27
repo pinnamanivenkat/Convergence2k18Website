@@ -511,11 +511,7 @@ section {
     position: relative;
     z-index: 16;
     overflow: hidden;
-}
-#demoimage {
-    border-radius: 25%;
-    object-fit: fill;
-    filter: grayscale(100%) opacity(0.7);
+    background: transparent!important;
 }
 
 .text-v-center {
@@ -628,6 +624,10 @@ h6 {
 .contact-content .row,
 .contact-content .col-lg-6 {
     margin-top: 5%;
+}
+
+.container-fluid {
+    background: transparent;
 }
 
 .fa {
@@ -788,4 +788,19 @@ transition: all .4s ease-in-out;
 
 .event-cards .front {
     background: white;
+}
+
+#sponsors * {
+    z-index: 16;
+}
+
+#sponsors .col-6 {
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#sponsors .col-6 img {
+    margin-bottom: 15px;
+    object-fit: fill;
 }
