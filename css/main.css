@@ -706,13 +706,14 @@ transition: all .4s ease-in-out;
 }
 
 .active-cards {
-    display: block;
+    display: flex;
 }
 
 .team-container {
     perspective: 1200px;
     margin-bottom: 20px;
     z-index: 16;
+    height: 100%;
 }
 
 .team-card {

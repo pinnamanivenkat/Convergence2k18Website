@@ -112,8 +112,8 @@
             });
 
             anime.timeline({
-                    loop: false
-                })
+                loop: false
+            })
                 .add({
                     targets: '.ml1 .letter',
                     scale: [0.3, 1],
@@ -249,9 +249,8 @@
     });
 
     function resizeTeamImages() {
-        $('.team-container').each(function (idx, element) {
-            $(element).css('height', $(element).css('width'));
-        })
+        var cw = $('.team-container').width();
+        $('.team-container').css({ 'height': cw + 'px' });
     }
 
 })(jQuery);
