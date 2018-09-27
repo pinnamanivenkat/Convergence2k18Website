@@ -5,7 +5,7 @@
         elements_selector: ".lazy"
     })
 
-    $('.event-theme').on('click', function () {
+    $('.present').on('click', function () {
         $('.event-theme').each(function () {
             $(this).removeClass("active");
         })
@@ -15,23 +15,15 @@
         $('.event-cards').each(function () {
             $(this).removeClass("active-cards");
         })
-        //console.log(themeTitle);
         $(themeTitle).addClass("active-cards");
     });
+
     $('.fa-snapchat-ghost').click(() => {
-        $('.snapchat-code').show("scale", {
-            percent: 100,
-            direction: 'both',
-            origin: ['center', 'middle']
-        }, 400)
+        $('.snapchat-code').show(400)
     });
 
     $('.snapchat-code').click(() => {
-        $('.snapchat-code').hide("scale", {
-            percent: 0,
-            direction: 'both',
-            origin: ['middle', 'center']
-        }, 400);
+        $('.snapchat-code').hide(400);
     });
 
     $(".menu-link").click(function (e) {

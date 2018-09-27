@@ -707,6 +707,12 @@ transition: all .4s ease-in-out;
     height: 50vh;
 }
 
+.event-theme a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .event-cards {
     display: none;
 }
