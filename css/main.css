@@ -15,8 +15,11 @@ html {
     z-index: 16;
     position: relative;
 }
-
+.navbar-nav {
+    position: static;
+}
 #events ul {
+    padding-left: 0;
     list-style-type: none;
     color: white;
     display: flex;
@@ -25,7 +28,7 @@ html {
 #themes-list li {
     float: left;
     padding: 0 20px;
-/*    margin: 0 auto 0 0;*/
+    margin: 0 auto;
     font-size: 25px;
 }
 
@@ -512,7 +515,12 @@ section {
     position: fixed;
     z-index: 16;
 }
-
+#team {
+    position: absolute;
+    z-index: 15;
+    overflow: hidden; 
+/*    z-index: 1000;*/
+}
 #demoimage {
     border-radius: 25%;
     object-fit: fill;
