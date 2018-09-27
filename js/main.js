@@ -11,6 +11,7 @@
             image.src = imageUrl;
         }
     });
+
     $('.event-theme').on('click', function () {
         $('.event-theme').each(function () {
             $(this).removeClass("active");
@@ -24,37 +25,14 @@
         //console.log(themeTitle);
         $(themeTitle).addClass("active-cards");
     });
-    $('.menu-team').on('click',function() {
-        $('#team').css('z-index','16');
-        $('#team').css('overflow','visible');
-        $('.menu-item:first-child').attr('href','#');
-        $('.menu-item:first-child').removeClass("active");
-        $(this).addClass("active");
-        $(".menu").removeClass("open");
-        $(".menu-overlay").removeClass("open");
-    })
-    $('.menu-item').on('click',function() {
-        $('#team').css('z-index','15');
-        $('#team').css('overflow','hidden');
-        $('.menu-item').each(function() {
-            var spaceless = '#' + $(this).text().replace(/\s/g, '');
-            spaceless = spaceless.toLowerCase();
-            $(this).attr('href',spaceless)
-        });
-        $('[data-spy="scroll"]').each(function () {
-  var $spy = $(this).scrollspy('refresh')
-});
-        $('.menu-team').removeClass("active");
-        $(this).addClass("active");
-        
-    })
+
     $('.fa-snapchat-ghost').click(() => {
         $('.snapchat-code').show("scale", {
             percent: 100,
             direction: 'both',
             origin: ['center', 'middle']
         }, 400)
-    })
+    });
 
     $('.snapchat-code').click(() => {
         $('.snapchat-code').hide("scale", {
