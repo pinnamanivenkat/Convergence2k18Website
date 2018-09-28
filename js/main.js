@@ -171,7 +171,6 @@
                 }
             }
         },
-        // "retina_detect": true
     });
 
     function resizeTeamImages() {
