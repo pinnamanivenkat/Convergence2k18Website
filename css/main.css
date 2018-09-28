@@ -507,6 +507,7 @@ section {
     position: fixed;
     z-index: 16;
 }
+
 #team {
     position: relative;
     z-index: 16;
@@ -743,6 +744,10 @@ transition: all .4s ease-in-out;
     transform: rotateY(180deg);
 }
 
+.team-container img {
+    height: 100%!important;
+}
+
 .team-card img {
     width: 100%;
     height: 100%;
@@ -794,13 +799,13 @@ transition: all .4s ease-in-out;
     z-index: 16;
 }
 
-#sponsors .col-6 {
+#sponsors .col-md-6 {
     text-align: center;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-#sponsors .col-6 img {
+#sponsors .col-md-6 img {
     margin-bottom: 15px;
     object-fit: fill;
 }
