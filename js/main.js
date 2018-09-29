@@ -32,11 +32,6 @@
         $(".menu-overlay").toggleClass("open");
     });
 
-    resizeTeamImages();
-    $(window).resize(function () {
-        resizeTeamImages();
-    });
-
     $('a').not('[href="#"]').not('[href="#0"]').click(function (event) {
         if (
             location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
@@ -172,10 +167,5 @@
             }
         },
     });
-
-    function resizeTeamImages() {
-        var cw = $('.team-container').width();
-        $('.team-container').css({ 'height': cw + 'px' });
-    }
 
 })(jQuery);
