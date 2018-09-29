@@ -830,6 +830,7 @@ h6 {
 }
 
 #sponsors .col-md-6 img {
+    height: 100px;
     margin-bottom: 15px;
     object-fit: fill;
 }
