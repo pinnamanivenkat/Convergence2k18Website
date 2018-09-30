@@ -15,9 +15,11 @@ html {
     z-index: 16;
     position: relative;
 }
+
 .navbar-nav {
     position: static;
 }
+
 #events ul {
     padding-left: 0;
     list-style-type: none;
@@ -25,6 +27,7 @@ html {
     display: flex;
     flex-wrap: wrap;
 }
+
 #themes-list li {
     float: left;
     padding: 0 20px;
@@ -100,9 +103,11 @@ html {
     overflow: hidden;
     width: 100%;
 }
+
 #events .container {
     padding-left: 0;
 }
+
 .card .back {
     background: #eaeaed;
     color: #0087cc;
@@ -310,6 +315,7 @@ svg {
 .ml1 .line2 {
     bottom: 0;
 }
+
 .Wmenu {
     position: fixed;
     z-index: 1000;
@@ -407,7 +413,7 @@ svg {
     justify-content: center;
     align-items: center;
     transition: opacity 0.2s ease-in-out;
-/*    z-index: 1000;*/
+    /*    z-index: 1000;*/
 }
 
 .menu-overlay.open {
@@ -415,6 +421,7 @@ svg {
     visibility: visible;
     transition-delay: 0.03s;
 }
+
 .menu-overlay a {
     font-size: 2.5rem;
     color: grey;
@@ -482,7 +489,7 @@ svg {
 section {
     padding-top: 100px;
     padding-bottom: 100px;
-    background: black!important;
+    background: black !important;
 }
 
 .section-heading {
@@ -512,7 +519,7 @@ section {
     position: relative;
     z-index: 16;
     overflow: hidden;
-    background: transparent!important;
+    background: transparent !important;
 }
 
 .text-v-center {
@@ -609,7 +616,7 @@ h6 {
 
 #aboutus h4 {
     width: 100%;
-    word-wrap: break-word!important;
+    word-wrap: break-word !important;
 }
 
 .contact-content {
@@ -661,12 +668,11 @@ h6 {
 }
 
 .fa-instagram {
-     background: #125688; 
-background: radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949
-45%,#d6249f 60%,#285AEB 90%);
-color: white;
-border: 1px #125688 solid;
-transition: all .4s ease-in-out;
+    background: #125688;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+    border: 1px #125688 solid;
+    transition: all .4s ease-in-out;
 }
 
 .fa-instagram:hover {
@@ -726,7 +732,25 @@ transition: all .4s ease-in-out;
     perspective: 1200px;
     margin-bottom: 20px;
     z-index: 16;
-    height: 100%;
+    height: 50vh;
+}
+
+@media (max-width: 992px) {
+    .team-container {
+        height: 40vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-container {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 441px) {
+    .team-container {
+        height: 40vh;
+    }
 }
 
 .team-card {
@@ -745,7 +769,7 @@ transition: all .4s ease-in-out;
 }
 
 .team-container img {
-    height: 100%!important;
+    height: 100% !important;
 }
 
 .team-card img {
@@ -802,10 +826,17 @@ transition: all .4s ease-in-out;
 #sponsors .col-md-6 {
     text-align: center;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #sponsors .col-md-6 img {
+    height: 100px;
     margin-bottom: 15px;
     object-fit: fill;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 100px;
+    object-fit: contain !important;
 }
