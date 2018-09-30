@@ -5,6 +5,25 @@
         elements_selector: ".lazy"
     })
 
+    $(window).on('load', function () {
+        resizeTeamImages();
+    });
+
+    $(window).resize(function () {
+        resizeTeamImages();
+    })
+
+    function resizeTeamImages() {
+        var cw = $('.team-container').width();
+        console.log(cw);
+        if (cw <= 50) {
+            location.reload();
+        }
+        $('.team-container').css({
+            'height': cw + 'px'
+        });
+    }
+
     $('.present').on('click', function () {
         $('.event-theme').each(function () {
             $(this).removeClass("active");
